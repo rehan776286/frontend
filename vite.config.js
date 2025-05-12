@@ -10,7 +10,7 @@ export default defineConfig({
     host: "localhost",
     proxy: {
       "/api": {
-        target: "http://localhost:4000",
+        target: "https://backend-ymyr.onrender.com",
         changeOrigin: true,
         secure: false,
       },
