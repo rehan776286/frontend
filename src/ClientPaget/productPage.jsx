@@ -12,7 +12,7 @@ import secureIcon from "../assets/secure.png";
 import axios from "axios";
 
 const ProductPage = () => {
-  const [item, setItem] = useState(null);
+  const [item, setItem] = useState([]);
   const { id } = useParams();
   const navigate = useNavigate();
 
