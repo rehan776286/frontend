@@ -67,7 +67,7 @@ export const getUserAuth = createAsyncThunk(
       const res = await axios.get("api/auth/is-auth", {
         withCredentials: true,
       });
-
+console.log(res.data)
       return res.data;
 
       // if (res.data.success) {
