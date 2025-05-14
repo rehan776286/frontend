@@ -1,15 +1,13 @@
 import loginIcon from "../assets/login.png";
 import cart from "../assets/cart.png";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import api from "../api.js";
 const HeaderCom = () => {
   const navigate = useNavigate();
 
   const LogoutHander = async () => {
     try {
-      const res = await axios.post("/api/auth/logout", {
-        withCredentials: true,
-      });
+      const res = await api.post("/api/auth/logout");
       const logout = res.data.success;
       if (logout) {
         navigate("/register");
