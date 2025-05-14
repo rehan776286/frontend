@@ -20,9 +20,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     const itemFetch = async () => {
-      const res = await api.get(`/api/item/${id}`, {
-        withCredentials: true,
-      });
+      const res = await api.get(`/api/item/${id}`);
       const item = res.data.item;
       setItem(item);
       console.log(item);
