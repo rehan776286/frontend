@@ -3,7 +3,7 @@ import { FaCartShopping } from "react-icons/fa6";
 import { GoStarFill } from "react-icons/go";
 import axios from "axios";
 import { Link } from "react-router-dom";
-const ProductCard = ({ products }) => {
+const ProductCard = ({ products=[] }) => {
   return (
     <main className="max-w-screen mx-auto grid  grid-cols-2 md:grid-cols-4 lg:grid-cols-6 justify-items-center items-center   gap-2 px-1  py-11 ">
       {products.map((product, index) => {
