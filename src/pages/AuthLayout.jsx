@@ -14,7 +14,7 @@ const Protecter = ({ children, isAuthed = true }) => {
       // You want the user to be authenticated, but they're not
       console.log("Redirecting to register because user is not authenticated");
       navigate("/register");
-    } else if (!isAuthed && isAuth) {
+    } else if (isAuthed && isAuth) {
       // You want the user to be unauthenticated, but they're logged in
       console.log("Redirecting to home because user is already authenticated");
       navigate("/");
