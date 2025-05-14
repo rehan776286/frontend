@@ -1,6 +1,7 @@
 import axios from "axios";
 import ProductCard from "../clientComponents/product";
 import { useEffect, useState } from "react";
+import api from "../api.js";
 
 const WatchSections = () => {
   const [product, setProduct] = useState([]);
@@ -9,7 +10,7 @@ const WatchSections = () => {
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await axios.get("/api/all-product", {
+        const res = await api.("/api/all-product", {
           withCredentials: true,
         });
         const data = res.data.allProduct;
