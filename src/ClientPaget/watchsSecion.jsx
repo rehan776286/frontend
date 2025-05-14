@@ -10,9 +10,7 @@ const WatchSections = () => {
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await api.("/api/all-product", {
-          withCredentials: true,
-        });
+        const res = await api.("/api/all-product");
         const data = res.data.allProduct;
         setProduct(data);
       } catch (error) {}
