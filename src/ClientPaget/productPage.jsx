@@ -8,8 +8,8 @@ import deliveryIcon from "../assets/deleveryIcon.png";
 import codIcon from "../assets/codIcon.png";
 import returnIcon from "../assets/returnIcon.png";
 import secureIcon from "../assets/secure.png";
+import api from "../api.js";
 
-import axios from "axios";
 
 const ProductPage = () => {
   const [item, setItem] = useState([]);
@@ -20,7 +20,7 @@ const ProductPage = () => {
 
   useEffect(() => {
     const itemFetch = async () => {
-      const res = await axios.get(`/api/item/${id}`, {
+      const res = await api.get(`/api/item/${id}`, {
         withCredentials: true,
       });
       const item = res.data.item;
