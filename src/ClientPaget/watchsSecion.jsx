@@ -5,12 +5,12 @@ import api from "../api.js";
 
 const WatchSections = () => {
   const [product, setProduct] = useState([]);
-  console.log(product);
+  
   console.log(product);
   useEffect(() => {
     const getProduct = async () => {
       try {
-        const res = await api.("/api/all-product");
+        const res = await api.get("/api/all-product");
         const data = res.data.allProduct;
         setProduct(data);
       } catch (error) {}
