@@ -50,9 +50,9 @@ const Register = () => {
     <>
       <main className="w-screen h-screen bg-white flex justify-center items-center overflow-hidden">
         <section className=" w-full h-full flex md:flex-row flex-col  md:justify-between  items-center gap-0">
-          <div className="w-full mt-2 h-80 md:h-full overflow-hidden flex items-center justify-center ">
+{/*           <div className="w-full mt-2 h-80 md:h-full overflow-hidden flex items-center justify-center ">
             <img src={i} alt="not fond" className="object-cover md:w-full" />
-          </div>
+          </div> */}
           <div className="w-full  flex justify-center items  border-green-400 ">
             <div className="  w-[30rem]  ">
               <div className="w-full  bg-[#eaeaea]  h-20 -z-0 relative top-4 rounded-t-3xl flex  px-3 justify-between items-center">
