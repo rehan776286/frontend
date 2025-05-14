@@ -61,7 +61,7 @@ export const getUserAuth = createAsyncThunk(
   "auth/is-auth",
   async (_, thunkAPI) => {
     try {
-      const res = await api.get("api/auth/is-auth",  );
+      const res = await api.get("api/auth/is-auth");
  
 
       return res.data;
