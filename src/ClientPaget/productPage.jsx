@@ -10,7 +10,6 @@ import returnIcon from "../assets/returnIcon.png";
 import secureIcon from "../assets/secure.png";
 import api from "../api.js";
 
-
 const ProductPage = () => {
   const [item, setItem] = useState([]);
   const { id } = useParams();
@@ -32,8 +31,8 @@ const ProductPage = () => {
     <main className=" w-full min-h-screen bg-gray-100    overflow-hidden">
       {item ? (
         <section className="w-full   px-2   mx-auto grid grid-cols-1 md:grid-cols-2 bg-white">
-          <div className="  flex  justify-center  mx-auto items-center p-1 ">
-            <div className="flex h-[25rem] md:h-[40rem]  w-full  justify-center items-center  ">
+          <div className="  flex  justify-center  mx-auto items-start p-1 md:pt-20 ">
+            <div className="flex h-[25rem] md:h-[30rem]  w-full  justify-center items-center  ">
               <img
                 src={item.productImages}
                 alt=""
@@ -81,7 +80,7 @@ const ProductPage = () => {
             </div>
             <hr className="border-t border-gray-200 my-10" />
 
-            <div className="flex justify-center  items-start gap-6 mt-6 ">
+            <div className="flex justify-center  items-start gap-5 mt-6   ">
               <div className="flex flex-col items-center text-center w-40">
                 <img
                   src={returnIcon}
