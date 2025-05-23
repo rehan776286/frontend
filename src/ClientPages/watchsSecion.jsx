@@ -1,5 +1,5 @@
 import axios from "axios";
-import ProductCard from "../clientComponents/product";
+import ProductCard from "../clientComponents/product.jsx";
 import { useEffect, useState } from "react";
 import api from "../api.js";
 

@@ -2,17 +2,17 @@ import { lazy } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Protecter from "../pages/AuthLayout";
-import ClientLayout from "../ClientPaget/ClientLayout";
+import ClientLayout from "../ClientPages/ClientLayout";
 
 // Lazy-loaded pages
 
 const Register = lazy(() => import("../pages/registerpage"));
 const OtpVerify = lazy(() => import("../pages/otpVerify"));
-const ClientHome = lazy(() => import("../ClientPaget/ClientHome"));
-const ProductPage = lazy(() => import("../ClientPaget/productPage"));
-const OrderPage = lazy(() => import("../ClientPaget/orderPage"));
-const OrderSuccess = lazy(() => import("../ClientPaget/Ordersuccess"));
-const OrderList = lazy(() => import("../ClientPaget/OrderListCom"));
+const ClientHome = lazy(() => import("../ClientPages/ClientHome"));
+const ProductPage = lazy(() => import("../ClientPages/productPage"));
+const OrderPage = lazy(() => import("../ClientPages/orderPage"));
+const OrderSuccess = lazy(() => import("../ClientPages/Ordersuccess"));
+const OrderList = lazy(() => import("../ClientPages/OrderListCom"));
 export const router = createBrowserRouter([
   {
     path: "/",
