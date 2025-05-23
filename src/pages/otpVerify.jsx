@@ -91,13 +91,13 @@ const OtpVerify = () => {
 
               <button
                 type="submit"
-                className="mt-4 w-80 py-2 text-4xl capitalize text-blue-800 font-semibold bg-white rounded-2xl px-7"
+                className="mt-4 w-80 py-2 text-4xl capitalize text-blue-800 font-semibold bg-white rounded-2xl px-7  cursor-pointer hover:scale-95 active:scale-110 transition duration-100"
               >
                 submit
               </button>
               <p className="text-xl mt-4 text-slate-800 capitalize">
                 dont recieve OTP
-                <button className="text-2xl text-white capitalize ml-2">
+                <button className="text-2xl text-white capitalize ml-2 ">
                   resend
                 </button>
               </p>

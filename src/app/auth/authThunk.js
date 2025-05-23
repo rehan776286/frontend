@@ -1,5 +1,4 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
 import { setAuth } from "./authSlice";
 import api from "../../api.js";
 

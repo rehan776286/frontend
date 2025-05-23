@@ -1,61 +1,53 @@
+import AddressList from "../clientComponents/addressList";
+import AddAddress from "../clientComponents/AddAddress";
 import FutureDetails from "../clientComponents/futurePriceDetails";
-import FloatingInput from "../clientComponents/input";
+import { useParams } from "react-router-dom";
+import PaymentCom from "../clientComponents/payment";
+import { useDispatch, useSelector } from "react-redux";
+import { placeOrder } from "../app/orderSlice";
+import { useNavigate } from "react-router-dom";
 
 const OrderPage = () => {
+  const { paymentMethod, quantity, shippingAddress, OrderDone } = useSelector(
+    (state) => state.order
+  );
+  const navigate = useNavigate();
+
+  console.log(OrderDone);
+
+  const { id } = useParams();
+
+  const dispatch = useDispatch();
+
+  const createOrder = async () => {
+    const res = await dispatch(
+      placeOrder({ id, paymentMethod, quantity, shippingAddress })
+    ).unwrap();
+    navigate(`/success/${id}`);
+  };
+
   return (
-    <>
-      <main className="w-full min-h-screen grid grid-cols-1 md:grid-cols-2 overflow-hidden">
-        <section className="w-full bg-white  flex justify-center items-center ">
-          <form
-            action=""
-            className=" w-full  mt-5 md:mt-0 space-y-6 text-sm  px-5 "
-          >
-            <div className="w-full flex flex-col md:flex-row gap-3">
-              <FloatingInput id={"Name"} label={"Full Name"}></FloatingInput>
-              <FloatingInput
-                id={"mobile number"}
-                label={"10 digit mobile number"}
-              ></FloatingInput>
-            </div>
-            <div className="w-full flex flex-col md:flex-row gap-3">
-              <FloatingInput id={"pincode"} label={"Pincode"}></FloatingInput>
+    <main className="w-full overflow-x-hidden">
+      <div className="py-4 px-10 bg-teal-400 text-xl text-white font-semibold">
+        <h2>ShopCart</h2>
+      </div>
+      <section className="w-full grid grid-cols-1 md:grid-cols-2 mx-0">
+        <div>
+          <AddressList />
+          <PaymentCom />
+        </div>
+        <div>
+          <FutureDetails id={id} />
+        </div>
 
-              <FloatingInput id={"locality"} label={"Locality"}></FloatingInput>
-            </div>
-            <div className="border border-slate-300 w-full px-2  rounded-md  focus-within:border-blue-600 transition">
-              <label
-                htmlFor=""
-                className="text-xs text-slate-500 font-semibold "
-              >
-                address aria
-              </label>
-              <textarea className="w-full focus:outline-none"></textarea>
-            </div>
-            <div className=" w-full flex flex-col md:flex-row gap-3">
-              <FloatingInput
-                id={"city"}
-                label={"City/Distic/Town"}
-              ></FloatingInput>
-
-              <FloatingInput id={"state"} label={"State"}></FloatingInput>
-            </div>
-            <div className=" w-full flex flex-col md:flex-row gap-3">
-              <FloatingInput
-                id={"landmark"}
-                label={"Landmark (optional)"}
-              ></FloatingInput>
-              <FloatingInput
-                id={"alternative number"}
-                label={"Alternative (mobile number)"}
-              ></FloatingInput>
-            </div>
-          </form>
-        </section>
-        <section className="w-full h-full ">
-          <FutureDetails />
-        </section>
-      </main>
-    </>
+        <button
+          className="px-8 py-4 mt-2 text-lg  rounded-sm bg-teal-500 font-semibold text-white cursor-pointer hover:scale-95 active:scale-110 transition duration-100 "
+          onClick={createOrder}
+        >
+          Place Order
+        </button>
+      </section>
+    </main>
   );
 };
 

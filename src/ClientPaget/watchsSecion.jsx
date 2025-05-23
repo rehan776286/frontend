@@ -5,7 +5,7 @@ import api from "../api.js";
 
 const WatchSections = () => {
   const [product, setProduct] = useState([]);
-  
+
   console.log(product);
   useEffect(() => {
     const getProduct = async () => {

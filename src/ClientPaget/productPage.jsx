@@ -15,8 +15,9 @@ const ProductPage = () => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  console.log(id);
-
+  const handelBuyNow = () => {
+    navigate(`/order/${id}`);
+  };
   useEffect(() => {
     const itemFetch = async () => {
       const res = await api.get(`/api/item/${id}`);
@@ -49,32 +50,32 @@ const ProductPage = () => {
 
               <div className="flex justify-start items-center gap-2 text-amber-500">
                 <i>
-                  <GoStarFill size={24} />
+                  <GoStarFill size={20} />
                 </i>
                 <i>
-                  <GoStarFill size={24} />
+                  <GoStarFill size={20} />
                 </i>
                 <i>
-                  <GoStarFill size={24} />
+                  <GoStarFill size={20} />
                 </i>
                 <i>
-                  <GoStarFill size={24} />
+                  <GoStarFill size={20} />
                 </i>
                 <i>
-                  <GoStarFill size={24} />
+                  <GoStarFill size={20} />
                 </i>
 
                 <span>{item.numberOfReviews}</span>
               </div>
               <div className="w-full flex justify-start items-center gap-3">
                 <h2 className="text-teal-700 text-2xl  font-semibold">
-                  $ {item.productPrice}
+                  ₹ {Math.floor(item.discountedPrice)}
                 </h2>
                 <span className="text-2xl line-through text-gray-400">
-                  2000
+                  ₹{item.productPrice}
                 </span>{" "}
                 <span className="text-teal-600 text-2xl font-semibold">
-                  70% off
+                  {item.discount} % off
                 </span>
               </div>
             </div>
@@ -119,8 +120,8 @@ const ProductPage = () => {
               Add to Cart
             </button>
             <button
-              onClick={() => navigate("/order")}
-              className="w-full text-center py-3 rounded-2xl mt-5 bg-teal-600 text-xl font-semibold text-white"
+              onClick={handelBuyNow}
+              className="w-full text-center py-3 rounded-2xl mt-5 bg-teal-600 text-xl  cursor-pointer font-semibold text-white px-6  hover:bg-blue-70 shadow-md hover:shadow-lg transition duration-200 active:scale-95 focus:outline-none focus:ring-2 "
             >
               Buy Now
             </button>

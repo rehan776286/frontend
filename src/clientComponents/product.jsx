@@ -3,13 +3,13 @@ import { FaCartShopping } from "react-icons/fa6";
 import { GoStarFill } from "react-icons/go";
 import axios from "axios";
 import { Link } from "react-router-dom";
-const ProductCard = ({ products=[] }) => {
+const ProductCard = ({ products = [] }) => {
   return (
-    <main className="max-w-screen mx-auto grid  grid-cols-2 md:grid-cols-4 lg:grid-cols-6 justify-items-center items-center   gap-2 px-1  py-11 ">
+    <main className="max-w-screen mx-auto grid  grid-cols-2 md:grid-cols-4 lg:grid-cols-6  justify-items-center items-center   gap-2 px-1  py-11 ">
       {products.map((product, index) => {
         return (
           <Link to={`/product/${product._id}`} key={product._id}>
-            <article className=" min-w-12 p-2 bg-white border border-slate-200 shadow-xl  rounded-xl">
+            <article className=" min-w-12 p-2 bg-white border border-slate-200 shadow-xl  rounded-xl  hover:bg-blue-70  hover:shadow-lg transition duration-200 active:scale-95 focus:outline-none focus:ring-2">
               <header className="w-full h-48 flex  justify-center items-center ">
                 <img
                   src={product.productImages}
@@ -30,11 +30,16 @@ const ProductCard = ({ products=[] }) => {
                 <div className="">
                   <div className="flex justify-start items-center gap-2 ">
                     <span className="text-lg font-semibold text-teal-600">
-                      {" "}
-                      {product.productPrice}
+                      ₹ {Math.floor(product.discountedPrice)}
                     </span>
-                    <span className="text-slate-500 line-through "> ₹2000</span>
-                    <span className="text-teal-700  font-bold"> %77 off</span>
+                    <span className="text-slate-500 line-through ">
+                      {" "}
+                      ₹{product.productPrice}
+                    </span>
+                    <span className="text-teal-700  font-bold">
+                      {" "}
+                      % {product.discount} off
+                    </span>
                   </div>
 
                   <div

@@ -50,7 +50,7 @@ const Register = () => {
     <>
       <main className="w-screen h-screen bg-white flex justify-center items-center overflow-hidden">
         <section className=" w-full h-full flex md:flex-row flex-col  md:justify-between  items-center gap-0">
-{/*           <div className="w-full mt-2 h-80 md:h-full overflow-hidden flex items-center justify-center ">
+          {/*           <div className="w-full mt-2 h-80 md:h-full overflow-hidden flex items-center justify-center ">
             <img src={i} alt="not fond" className="object-cover md:w-full" />
           </div> */}
           <div className="w-full  flex justify-center items  border-green-400 ">
@@ -65,7 +65,7 @@ const Register = () => {
                   signup
                 </button>
                 <button
-                  className="px-10 py-3 text-lg rounded-r-xl text-blue-800  font-semibold capitalize"
+                  className="px-10 py-3 text-lg rounded-r-xl text-blue-800  font-semibold capitalize "
                   onClick={() => switchForm("Login")}
                 >
                   login
@@ -138,9 +138,10 @@ const Register = () => {
                     <FaGoogle size={30} />
                   </button>
                 </div>
-                <div className=" w-full  flex justify-center mt-6 items-center">
+                <div className=" w-full  flex justify-center mt-6 items-center  ">
                   {login == "SignUp" ? (
                     <button
+                      className=" hover:bg-blue-70 shadow-md hover:shadow-lg transition duration-200 active:scale-95 focus:outline-none focus:ring-2"
                       onClick={(e) => {
                         e.preventDefault();
                         setLogin("Login");
@@ -150,6 +151,7 @@ const Register = () => {
                     </button>
                   ) : (
                     <button
+                      className=" hover:bg-blue-70 shadow-md hover:shadow-lg transition duration-200 active:scale-95 focus:outline-none focus:ring-2"
                       onClick={(e) => {
                         e.preventDefault();
                         setLogin("SignUp");

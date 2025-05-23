@@ -10,8 +10,9 @@ const Register = lazy(() => import("../pages/registerpage"));
 const OtpVerify = lazy(() => import("../pages/otpVerify"));
 const ClientHome = lazy(() => import("../ClientPaget/ClientHome"));
 const ProductPage = lazy(() => import("../ClientPaget/productPage"));
-const OrderPage = lazy(() => import("../ClientPaget/orderpage"));
-
+const OrderPage = lazy(() => import("../ClientPaget/orderPage"));
+const OrderSuccess = lazy(() => import("../ClientPaget/Ordersuccess"));
+const OrderList = lazy(() => import("../ClientPaget/OrderListCom"));
 export const router = createBrowserRouter([
   {
     path: "/",
@@ -33,8 +34,16 @@ export const router = createBrowserRouter([
             element: <ProductPage />,
           },
           {
-            path: "order",
+            path: "order/:id",
             element: <OrderPage />,
+          },
+          {
+            path: "success/:id",
+            element: <OrderSuccess />,
+          },
+          {
+            path: "orderlist",
+            element: <OrderList />,
           },
         ],
       },

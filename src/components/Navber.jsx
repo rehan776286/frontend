@@ -37,17 +37,20 @@ const HeaderCom = () => {
       <div className="flex  items-center gap-4">
         <button
           onClick={LogoutHander}
-          className="flex items-center gap-1 text-teal-600 bg-white border border-teal-600 px-4 py-2 rounded"
+          className="flex items-center gap-1 text-teal-600 cursor-pointer bg-white hover:scale-95 active:scale-110 transition duration-100 border border-teal-600 px-4 py-2 rounded"
         >
           <img src={loginIcon} alt="Login" className="w-5 h-5" />
           <span>logout</span>
         </button>
 
-        <button className="bg-teal-600 text-white py-1  rounded text-xm md:text-base">
-          Orders & Returns
+        <button
+          className="bg-teal-600 text-white py-2  px-7 rounded text-xm md:text-base cursor-pointer hover:scale-95 active:scale-110 transition duration-100"
+          onClick={() => navigate("/orderlist")}
+        >
+          Orders
         </button>
 
-        <button className="flex items-center gap-2 px-4 py-2 bg-white border border-teal-600 rounded">
+        <button className="flex items-center gap-2 px-4 py-2 bg-white border border-teal-600 rounded cursor-pointer hover:scale-95 active:scale-110 transition duration-100">
           <img src={cart} alt="Cart" className="w-6 h-6" />
           <span className="bg-teal-600 text-white rounded-full px-2 py-0.5 text-sm">
             12
