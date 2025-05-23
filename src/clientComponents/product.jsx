@@ -9,7 +9,7 @@ const ProductCard = ({ products = [] }) => {
       {products.map((product, index) => {
         return (
           <Link to={`/product/${product._id}`} key={product._id}>
-            <article className=" min-w-12 p-2 bg-white border border-slate-200 shadow-xl  rounded-xl  hover:bg-blue-70  hover:shadow-lg transition duration-200 active:scale-95 focus:outline-none focus:ring-2">
+            <article className=" w-full  p-2 bg-white border border-slate-200 shadow-xl  rounded-xl  hover:bg-blue-70  hover:shadow-lg transition duration-200 active:scale-95 focus:outline-none focus:ring-2">
               <header className="w-full h-48 flex  justify-center items-center ">
                 <img
                   src={product.productImages}
@@ -26,9 +26,9 @@ const ProductCard = ({ products = [] }) => {
                 </p>
               </main>
 
-              <footer className="w-full text-sm">
-                <div className="">
-                  <div className="flex justify-start items-center gap-2 ">
+              <footer className="w-full text-xs sm:text-sm ">
+                <div className="w-full">
+                  <div className="flex justify-start  items-center  sm:gap-2  ">
                     <span className="text-lg font-semibold text-teal-600">
                       ₹ {Math.floor(product.discountedPrice)}
                     </span>
