@@ -46,7 +46,7 @@ const FutureDetails = ({ id }) => {
           {/* Product Display */}
           <div className="">
             <div className="flex justify-center items-center gap-6 ">
-              <div className="w-60">
+              <div className="w-full max-w-26 object-center">
                 <img
                   src={product.productImage}
                   className="w-full"
