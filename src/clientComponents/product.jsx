@@ -11,9 +11,14 @@ const ProductCard = ({ products = [] }) => {
           name="description"
           content="Explore our amazing products with great discounts."
         />
+        <link rel="preconnect" href="https://res.cloudinary.com" />
+        <link rel="dns-prefetch" href="https://res.cloudinary.com" />
+        {products[0]?.productImages && (
+          <link rel="preload" as="image" href={products[0].productImages} />
+        )}
 
         {/* ✅ Preload first few visible product images */}
-        {products
+        {/* {products
           .slice(0, 2)
           .map(
             (product) =>
@@ -25,7 +30,7 @@ const ProductCard = ({ products = [] }) => {
                   href={product.productImages}
                 />
               )
-          )}
+          )} */}
       </Helmet>
       <main className="max-w-screen mx-auto grid  grid-cols-2 md:grid-cols-4 lg:grid-cols-6  justify-items-center items-center   gap-2 px-1  py-11 ">
         {products.map((product, index) => {
