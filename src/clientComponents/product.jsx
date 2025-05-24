@@ -22,7 +22,10 @@ const ProductCard = ({ products = [] }) => {
                   key={product._id}
                   rel="preload"
                   as="image"
-                  href={product.productImages}
+                  href={product.productImages.replace(
+                    "/upload/",
+                    "/upload/w_600,h_600,c_fill,q_auto,f_auto/"
+                  )}
                 />
               )
           )}
