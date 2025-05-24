@@ -34,7 +34,10 @@ const ProductCard = ({ products = [] }) => {
               <article className=" w-full  p-2 bg-white border border-slate-200 shadow-xl  rounded-xl  hover:bg-blue-70  hover:shadow-lg transition duration-200 active:scale-95 focus:outline-none focus:ring-2">
                 <header className="w-full h-48 flex  justify-center items-center ">
                   <img
-                    src={product.productImages}
+                    src={`${product.productImages.replace(
+                      "/upload/",
+                      "/upload/w_600,h_600,c_fill,q_auto,f_auto/"
+                    )}`}
                     alt=""
                     className=" w-full h-full object-contain aspect-square"
                   />
